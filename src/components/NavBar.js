@@ -1,23 +1,13 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import Home from '../components/Home';
-import Actors from '../components/Actors';
-import Directors from '../components/Directors';
-import Movies from '../components/Movies';
-const App = (props) => {
+import { NavLink } from 'react-router-dom';
+const NavBar = () => {
   return (
-    <Router>
-    <div>
-    <NavBar />
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/actors" component={Actors}/>
-    <Route exact path="/directors" component={Directors}/>
-    <Route exact path="/movies" component={Movies}/>
+    <div className="navbar">
+    <NavLink to="/" exact >Home</NavLink>
+    <NavLink to="/movies" exact >Movies</NavLink>
+    <NavLink to="/actors" exact >Actors</NavLink>
+    <NavLink to="/directors" exact >Directors</NavLink>
     </div>
-    </Router>
   );
 };
+export default NavBar;
